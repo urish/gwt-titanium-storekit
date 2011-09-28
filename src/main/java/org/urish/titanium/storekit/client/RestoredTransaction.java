@@ -6,15 +6,14 @@ import org.urish.gwtit.titanium.Blob;
 
 import com.google.gwt.core.client.JavaScriptObject;
 
-public class RestoredTransaction extends JavaScriptObject implements Transaction {
+public class RestoredTransaction extends JavaScriptObject {
 	protected RestoredTransaction() {
 	}
 
 	/**
 	 * The current state of the transaction; most likely To.Storekit.RESTORED.
 	 */
-	@Override
-	public PurchaseState getState() {
+	public final PurchaseState getState() {
 		return PurchaseState.fromNativeCode(getStateNative());
 	}
 
@@ -26,7 +25,6 @@ public class RestoredTransaction extends JavaScriptObject implements Transaction
 	/**
 	 * A string that uniquely identifies a successful payment transaction.
 	 */
-	@Override
 	public final native String getIdentifier()
 	/*-{
 		return this.identifier;
@@ -52,7 +50,6 @@ public class RestoredTransaction extends JavaScriptObject implements Transaction
 	/**
 	 * The date the transaction was added to the App Store's payment queue.
 	 */
-	@Override
 	public final native Date getDate()
 	/*-{
 	 	return this.date;
@@ -62,7 +59,6 @@ public class RestoredTransaction extends JavaScriptObject implements Transaction
 	 * A blob of type "text/json" which contains the receipt information for the
 	 * purchase.
 	 */
-	@Override
 	public final native Blob getReceipt()
 	/*-{
 	 	return this.receipt;

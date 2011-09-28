@@ -5,11 +5,10 @@ import java.util.Date;
 import org.urish.gwtit.titanium.Blob;
 import org.urish.titanium.storekit.client.Payment;
 import org.urish.titanium.storekit.client.PurchaseState;
-import org.urish.titanium.storekit.client.Transaction;
 
 import com.google.gwt.core.client.JavaScriptObject;
 
-public class PurchaseResult extends JavaScriptObject implements Transaction {
+public class PurchaseResult extends JavaScriptObject {
 	protected PurchaseResult() {
 	}
 
@@ -24,8 +23,7 @@ public class PurchaseResult extends JavaScriptObject implements Transaction {
 	/**
 	 * The Ti.Storekit.Payment object associated with the purchase
 	 */
-	@Override
-	public PurchaseState getState() {
+	public final PurchaseState getState() {
 		return PurchaseState.fromNativeCode(getStateNative());
 	}
 
@@ -56,7 +54,6 @@ public class PurchaseResult extends JavaScriptObject implements Transaction {
 	 * Transaction date (only when state == PurchaseState.PURCHASED or
 	 * PurchaseState.RESTORED)
 	 */
-	@Override
 	public final native Date getDate()
 	/*-{
 		return this.date;
@@ -66,7 +63,6 @@ public class PurchaseResult extends JavaScriptObject implements Transaction {
 	 * The transaction identifier (only when state == PurchaseState.PURCHASED or
 	 * PurchaseState.RESTORED)
 	 */
-	@Override
 	public final native String getIdentifier()
 	/*-{
 		return this.identifier;
@@ -77,7 +73,6 @@ public class PurchaseResult extends JavaScriptObject implements Transaction {
 	 * purchase (only when state == PurchaseState.PURCHASED or
 	 * PurchaseState.RESTORED)
 	 */
-	@Override
 	public final native Blob getReceipt()
 	/*-{
 		return this.receipt;
