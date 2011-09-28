@@ -1,7 +1,6 @@
 package org.urish.titanium.storekit.client;
 
-import java.sql.Blob;
-
+import org.urish.gwtit.titanium.Blob;
 import org.urish.titanium.storekit.client.events.PurchaseHandler;
 import org.urish.titanium.storekit.client.events.RequestProductsHandler;
 import org.urish.titanium.storekit.client.events.RestoredCompletedTransactionsHandler;

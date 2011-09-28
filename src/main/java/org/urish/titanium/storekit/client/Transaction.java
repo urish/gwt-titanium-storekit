@@ -1,7 +1,8 @@
 package org.urish.titanium.storekit.client;
 
-import java.sql.Blob;
 import java.util.Date;
+
+import org.urish.gwtit.titanium.Blob;
 
 public interface Transaction {
 	/**
