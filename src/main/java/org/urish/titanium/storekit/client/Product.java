@@ -36,7 +36,7 @@ public class Product extends JavaScriptObject {
 	/**
 	 * The locale of the product.
 	 */
-	public native final String getLocate()
+	public native final String getLocale()
 	/*-{
 		return this.locale;
 	}-*/;
